@@ -1,16 +1,45 @@
 import './App.css';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './Login';
+import { actionTypes } from "./reducer";
+import { useStateValue } from "./StateProvider";
+
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+  //todo create a login comopnent
+
+
   return (
     <div className="app">
+      {!user ? (
+        <Login />
+      ) : (
+        <div className="app__body">
 
-      <div className="app__body">
-        <Sidebar />
-        <Chat />
-      </div>
+          <Router>
+            <Sidebar />
+
+            <Switch>
+              <Route path="/rooms/:roomId">
+                <Chat />
+              </Route>
+
+              <Route path="/">
+                <Chat />
+              </Route>
+
+            </Switch>
+          </Router>
+
+        </div>
+      )}
     </div>
   )
 }
+
+
 
 export default App;
