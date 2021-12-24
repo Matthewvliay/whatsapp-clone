@@ -1,9 +1,10 @@
 import firebase from "firebase";
-
+require('dotenv').config();
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 //GET Below Settings from Firebase > Project Overview > Settings > General > Your apps > Firebase SDK snippet > Config
+const KEY = process.env.REACT_APP_API_KEY;
 const firebaseConfig = {
-  apiKey: "AIzaSyCqzFsTICCuvjuRQ7jAHT1_FdNa_XgwJr4",
+  apiKey: KEY,
   authDomain: "whatsapp-mern-ede89.firebaseapp.com",
   databaseURL: "https://whatsapp-mern-ede89-default-rtdb.firebaseio.com",
   projectId: "whatsapp-mern-ede89",
