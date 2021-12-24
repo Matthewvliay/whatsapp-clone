@@ -1,4 +1,6 @@
 # WhatsApp Clone
+![image](https://user-images.githubusercontent.com/42940122/147369400-9bd43f77-537b-4e41-af21-18c21f812561.png)
+
 This is a chat application using React and Firebase for authentication. If you wish to view a demonstration, here is a <a href="https://clever-wescoff-4551f4.netlify.app/"> live demo</a>.
 
 ## Available Scripts
