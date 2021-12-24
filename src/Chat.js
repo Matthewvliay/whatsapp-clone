@@ -75,8 +75,7 @@ function Chat() {
             <div className='chat_body'>
                 {messages.map(message =>
                 (
-                    //!prop needs a unique id
-                    <p id={message} className={`chat_message ${message.name === user.displayName && 'chat_receiver'}`}>
+                    <p key={message} id={message} className={`chat_message ${message.name === user.displayName && 'chat_receiver'}`}>
                         <span id={message} className="chat_name">{message.name}</span>
                         {message.message}
                         <span className="chat_timestemp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
