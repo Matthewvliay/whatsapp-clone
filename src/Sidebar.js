@@ -12,7 +12,8 @@ import { useStateValue } from './StateProvider';
 function Sidebar(props) {
 
     const [rooms, setRooms] = useState([]);
-    const [{user},dispatch] = useStateValue();
+    // eslint-disable-next-line no-unused-vars
+    const [{user}, dispatch] = useStateValue();
 
     useEffect(() => {
         const unsubscribe = db.collection('rooms').onSnapshot(snapshot => (
@@ -22,7 +23,6 @@ function Sidebar(props) {
                     data: doc.data()
                 }
             )
-
             ))
         ));
 
